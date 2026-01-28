@@ -4,7 +4,7 @@ export interface IUser extends Document {
     clerkID: string;
     name: string;
     email: string;
-    avatar?: string;
+    avatar: string;
     createAt: Date;
     updateAt: Date;
 }
@@ -27,6 +27,10 @@ const UserSchema = new Schema <IUser> ({
         lowercase: true,
         trim: true,
     },
+    avatar: {
+        type: String,
+        default: "",
+    }
 }, {
     timestamps: true,
 });
